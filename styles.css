@@ -9,24 +9,22 @@ body,html{
   height:100%;
 }
 
+.pages-styles body {
+  background-image:url('images/288053-minimalist-1280x720.jpg');
+  background-position: center;
+}
+
 body{
   background:#969593;
   /*box-shadow: inset 0 0 20vmin 0 #cfcdca;*/
 }
 
-.main-header{
+.main-header {
   background-image:url('images/288053-minimalist-1280x720.jpg');
   background-position: center;
 }
 
-.head-logo, .logo{
-  float: left;
-  height: 50px;
-  width: 50px;
-  margin: .5px;
-}
-
-.wrap{
+.index-page .wrap{
   position:relative;
   width:80vmin;
   height:80vmin;
@@ -35,7 +33,7 @@ body{
   transform:scale(1) translatez(0px);
 }
 
-a{
+.index-page a{
   position:absolute;
   left:0; 
   top:0;
@@ -46,7 +44,7 @@ a{
   background:#585247;
 }
 
-a div{
+.index-page a div{
   height:100%;
   background-size:cover;
   opacity:.5;
@@ -54,50 +52,94 @@ a div{
   border-radius:inherit;  
 }
 
-a:nth-child(1){
+.index-page a:nth-child(1){
   border-radius:40vmin 0 0 0;
   transform-origin: 110% 110%;
   transition:transform .4s .15s;
 }
 
-a:nth-child(1) div{
+.index-page a:nth-child(1) div{
   background-image:url('images/estudantes.jpg');
+  z-index: -1;
 }
 
-a:nth-child(2){
+.index-page a:nth-child(1) div span {
+  position: absolute;
+  right: 50px;
+  top: 120px;
+  z-index: 1;
+  font-size: 30px;
+  color: #ffffff;
+  text-shadow: .5px 5px black;
+}
+
+.index-page a:nth-child(2){
   border-radius:0 40vmin 0 0;
   left:52.5%;
   transform-origin: -10% 110%;
   transition:transform .4s .2s;
 }
 
-a:nth-child(2) div{
+.index-page a:nth-child(2) div{
   background-image:url('images/racism-pandemic.jpg');
+  z-index: -1;
 }
 
-a:nth-child(3){
+.index-page a:nth-child(2) div span {
+  position: absolute;
+  left: 55px;
+  top: 120px;
+  z-index: 1;
+  font-size: 30px;
+  color: #ffffff;
+  text-shadow: .5px 5px black;
+}
+
+.index-page a:nth-child(3){
   border-radius:0 0 0 40vmin;
   top:52.5%;
   transform-origin: 110% -10%;
   transition:transform .4s .25s;
 }
 
-a:nth-child(3) div{
+.index-page a:nth-child(3) div{
   background-image:url('images/Coal-Smokestack-Kenn W. Kiser-morgueFile.com_.jpg');
+  z-index: -1;
 }
 
-a:nth-child(4){
+.index-page a:nth-child(3) div span {
+  position: absolute;
+  left: 55px;
+  top: 72px;
+  z-index: 1;
+  font-size: 30px;
+  color: #ffffff;
+  text-shadow: .5px 5px black;
+}
+
+.index-page a:nth-child(4){
   border-radius:0 0 40vmin 0;
   top:52.5%; left:52.5%;
   transform-origin: -10% -10%;
   transition:transform .4s .3s;
 }
 
-a:nth-child(4) div{
+.index-page a:nth-child(4) div{
   background-image: url('images/011120_NoWarOnDrugs_03g.jpg');
+  z-index: -1;
 }
 
-a:nth-child(5){
+.index-page a:nth-child(4) div span {
+  position: absolute;
+  left: 53px;
+  top: 75px;
+  z-index: 1;
+  font-size: 30px;
+  color: #ffffff;
+  text-shadow: .5px 5px black;
+}
+
+.index-page a:nth-child(5){
   width:55%;height:55%;
   left:22.5%; 
   top:22.5%;
@@ -106,11 +148,151 @@ a:nth-child(5){
   transform:scale(.5);
 }
 
-a:nth-child(5) div{
+.index-page a:nth-child(5) div{
   background-image: url('images/MW-IE298_dax_vo_20200413130233_ZQ.jpg');
+  z-index: -1;
 }
 
-a:hover{
+.index-page a:nth-child(5) div span {
+  position: absolute;
+  left: 55px;
+  top: 120px;
+  z-index: 1;
+  font-size: 30px;
+  color: #ffffff;
+  text-shadow: .5px 5px black;
+}
+
+.index-page a:hover{
   opacity:2;
   transform:  translatez(0px);
+}
+
+.index-page .logo-container{
+  display: flex;
+  height: 0px;
+  width: 0px;
+}
+
+.index-page .logo-container-title{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.logo-img{
+  flex: 0;
+}
+
+.image{
+  max-height: 50px;
+  max-width: 50px;
+}
+
+.logo-titel{
+  position: absolute;
+  flex: 1;
+} 
+
+.logo-titel p{
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.logo-msg{
+  position: absolute;
+  flex: .11;
+  top: 22px;
+  left: 70px;
+}
+
+.logo-msg p{
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+/*TEXT EDITION*/
+
+.titel-about{
+  font-size: 30px;
+  text-align: center;
+}
+
+.txt-about{
+  text-align: justify;
+  font-size: 20px;
+  margin-left: 35px;
+  margin-right: 35px;
+  margin-bottom: 15px;
+}
+
+.txt-intro{
+  text-align: center;
+  font-size: 20px;
+  margin-top: 50px;
+  padding-left: 300px;
+  padding-right: 300px;
+}
+
+
+/*pages styles*/
+
+
+.pages-styles .nav ul{
+  margin: 0;
+}
+
+.pages-styles .nav li{
+  display: inline;
+}
+
+.pages-styles .nav a{
+  display: inline-block;
+  padding: .8em;
+  color: #bbb;
+  text-decoration: none; 
+}
+
+.pages-styles .main-nav{
+  text-align: center;
+  font-size: 1.1em;
+  font-weight: lighter;
+  background-color: rgb(238, 238, 238);
+}
+
+.pages-styles .main-nav li{
+  padding: 0 5%; /* TOP/BOT = 0 and R/L = 5%*/
+}
+
+.pages-styles .nav a:hover{
+  background-color: rgba(211, 206, 206, 0.5);
+}
+
+.pages-styles .main-header{
+  background-position: center;
+  background-blend-mode: multiply; 
+  background-size: cover;
+  padding-bottom: 0; 
+}
+
+.pages-styles .page-name{
+  font-weight: normal;
+  text-align: center;
+  font-size: 4em;
+  margin: 0;
+  background-color: rgb(238, 238, 238);
+  border-top-style: solid;
+  border-bottom-style: solid;
+  border-top-width: thin;
+  /*border-bottom-width: thin;*/
+  border-top-color: rgb(248, 232, 226, 0);
+  border-bottom-color: rgb(245, 236, 233, 0);
+}
+
+.video{
+  position: absolute;
+  flex: .11;
+  top: 370px;
+  left: 520px;
+  margin: 0;
 }
