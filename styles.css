@@ -6,23 +6,34 @@
 body, html{
   margin: 0;
   height: 100%;
+  background-image: url("images/aa98bb63615a92dd7a72f038fae3ba07.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
 }
 
 .header-box{
-  background-image: url("images/aa98bb63615a92dd7a72f038fae3ba07.jpg");
-  height: 100%;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background: #b5963f56;
+  opacity: 0.8;
+  flex: 0;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0);
+  margin: 0 auto 0 auto;
+  position: top;
 }
+
 .container-1{
   text-align: center;
   color: white;
-  /*border: 1px solid black;*/ 
-  margin: 120px auto 0 auto;
+  /*border: 1px solid white;*/
   width: 95%;
+  margin-top: 0;
+  margin-right: auto;
+  margin-bottom: 0;
+  margin-left: auto;
 }
+
 
 .container-1 h1{
   font-size: 100px;
@@ -34,22 +45,23 @@ body, html{
 
 .flex-box-container-1 {
   display: flex;
-  /*border: 1px solid black;*/
+  /*border: 1px solid white;*/ 
   padding: 10px;
   flex-wrap: wrap;
   justify-content: space-around;
 }
 
+
 .flex-box-container-1 .sreach button{
   cursor: pointer;
-  /*border: 1px solid black;*/ 
+  /*border: 1px solid white;*/
 }
 
 
 .search{
   display: flex;
   flex-wrap: wrap;
-  width: 100%;
+  width: 95%;
   margin: 0 auto;
 }
 
@@ -64,7 +76,7 @@ form {
 input[type="search"] {
   border: none;
   white-space: wrap;
-  border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 0px;
 	background: #E9E9E9;
 	overflow: hidden;
 	white-space: nowrap;
@@ -87,7 +99,7 @@ input[type="search"]:focus {
 button {
   flex: 0;
   max-height: 3em;
-  border-radius: 0px 5px 5px 0px;
+  border-radius: 5px 0px 0px 5px;
   border: none;
   padding: 0.35em 0.75em;
   cursor: pointer;
@@ -106,6 +118,71 @@ button {
   justify-content: center;
   animation: move 1.5s infinite alternate;
 }
+
+.scroll img{
+  width: 50px;
+  height: 50px;
+  margin-top:  1.5%;
+}
+
+.container-2{
+  flex: 1;
+  color: white;
+  text-align: center;
+  border: 1px solid white; 
+  margin: 300px auto 0 auto;
+}
+
+.flex-box-container-2-end {
+  display: flex;
+  border: 1px solid white;
+  padding: 10px;
+  justify-content: flex-end;
+}
+
+.flex-box-container-2-start{
+  display: flex;
+  border: 1px solid white; 
+  padding: 10px;
+  justify-content: flex-start;
+  width: 70%;
+}
+
+.content-end{
+  width: 70%;
+  height: 100%;
+  justify-content: flex-end;
+}
+
+.quote-title{
+  font-size: 2em;
+  width: 10%;
+  margin-top: 4%;
+  margin-bottom: 4%;
+  text-align: center; 
+}
+
+.quote-title-economic {
+  font-size: 2em;
+  width: 300px;
+  margin: 0;
+  /*margin-top: 2%;
+  margin-bottom: 2%;*/
+  text-align: center; 
+}
+
+.flex-box-container-2-end img,
+.flex-box-container-2-start img{
+  height: 300px;
+  width: 374px;
+}
+
+.flex-box-container-2-end span,
+.flex-box-container-2-start span{
+  margin: .5%;
+}
+
+
 
 @keyframes move {
   0%{
