@@ -3,30 +3,30 @@
   font-family: 'Oswald', sans-serif;
 }
 
-body, html{
-  height: 100%;
-  background-color: white;
+body{
+  margin: 0;
 }
 
 .header-box-image{
-  background-image: url("images/aa98bb63615a92dd7a72f038fae3ba07.jpg");
-  height: 100vh;
+  background-image:url("images/aa98bb63615a92dd7a72f038fae3ba07.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
+  background-blend-mode: saturation;
 }
 
 
 .header-box{
-  background: #b5963f56;
-  opacity: 0.8;
+  background: #0000007e;
+  opacity: 1;
+  border: 0.1px solid rgba(255, 255, 255, 0);
   flex: 0;
   text-align: center;
-  border: 1px solid rgba(255, 255, 255, 0);
-  margin: 0 auto 0 auto;
+  /*border: 2px solid white;*/
+  margin: 0 auto 15px auto;
   position: top;
-  height: 100vh;
+  height: 80vh;
 }
 
 .container-1{
@@ -54,6 +54,7 @@ body, html{
   /*border: 1px solid white;*/ 
   padding: 10px;
   flex-wrap: wrap;
+  color: white;
   justify-content: space-around;
 }
 
@@ -74,7 +75,7 @@ body, html{
 form {
   display: flex;
   flex-wrap: wrap;
-  width: 85%;
+  width: 65%;
   margin: 0 auto;
 }
 
@@ -135,13 +136,19 @@ button {
   flex: 1;
   color: black;
   /*border: 1px solid black;*/ 
-  margin: 150px auto 0 auto;
-  box-shadow: rgb(227, 178, 93) 0px 6px 33px -1px;
+  margin: 0 auto 0 auto;
 }
 
 .container-2 h1{
   text-align: center;
+  margin: 0;
 }
+
+.title p{
+  padding: 0;
+  margin: 0 0 200px 0;
+  text-align: center;
+} 
 
 .quotes-container {
   display: flex;
@@ -155,11 +162,12 @@ button {
   }
 
 .quote-container:nth-child(1) {
-  border: 1px solid black;
+  background-color: rgba(0, 0, 0, 0.24);
+  border: 0 solid black;
   order: 0;
   flex: 0 1 auto;
   align-self: flex-end;
-  margin: 3px 0 3px 0;
+  margin: 5px 300px 5px 0;
   padding: 0;
   }
    
@@ -178,11 +186,12 @@ button {
 }  
 
 .quote-container:nth-child(2) {
-  border: 1px solid black;
+  background-color: rgba(196, 196, 196, 0.507);
+  border: 0 solid black;
   order: 0;
   flex: 0 1 auto;
   align-self: flex-start;
-  margin: 3px 0 3px 0;
+  margin: 5px 0 5px 300px;
   padding: 0;
   }
 
