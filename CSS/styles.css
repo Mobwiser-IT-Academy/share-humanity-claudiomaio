@@ -10,7 +10,7 @@ body{
 }
 
 .header-box-image{
-  background-image:url("images/aa98bb63615a92dd7a72f038fae3ba07.jpg");
+  background-image:url("../images/aa98bb63615a92dd7a72f038fae3ba07.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
@@ -162,7 +162,7 @@ button {
   /*border: 1px solid black;*/
   }
 
-.quote-container:nth-child(1){
+.quote-container:nth-child(2n+1){
   background-color: rgba(0, 0, 0, 0.24);
   border: 0 solid black;
   order: 0;
@@ -186,7 +186,7 @@ button {
     text-align: center;
 }  
 
-.quote-container:nth-child(2) {
+.quote-container:nth-child(2n+0) {
   background-color: rgba(196, 196, 196, 0.507);
   border: 0 solid black;
   order: 0;
@@ -340,7 +340,7 @@ button {
 
 
 .header-box-image-ECO{
-  background-image:url("images/transferir.jpg");
+  background-image:url("../images/transferir.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;

@@ -8,6 +8,16 @@ const issues = [
      description: 'Racismo puro e duro!',  
      link: ' ', 
      imagePath: 'images/1519793330.banner.CUL-Racial-Discrimination-776x620.jpg'},
+
+     {keyword: 'economic',
+     description: 'Varias informações sobre o Covid-19',
+     link: 'Economic.Crisis.html', 
+     imagePath: 'images/transferir.jpg'},
+      
+    {keyword: 'racism', 
+     description: 'Racismo puro e duro!',  
+     link: ' ', 
+     imagePath: 'images/1519793330.banner.CUL-Racial-Discrimination-776x620.jpg'},
     
     ];
     
@@ -27,20 +37,20 @@ const issues = [
                         <p> the poor will be the have-not food."</p>
                       </quote>`;
         htmlLink += `<img class="economic" src=${issues[i].imagePath}>`;
-        htmlLink += `<\div>`;
-        htmlLink += `<\a>`;
+        htmlLink += `</div>`;
+        htmlLink += `</a>`;
       }
       
       if (issues[i].keyword === 'racism'){
-        /*htmlLink += `<a href=${issues[i].link}>`;*/
+        htmlLink += `<a href=${issues[i].link}>`;
         htmlLink += `<div class="quote-container quote-2" data-aos="fade-left">`;
         htmlLink += `<img class="racism" src=${issues[i].imagePath}>`;
-        htmlLink  += `<quote> 
+        htmlLink += `<quote> 
                         <p> Racism </p> 
                         <p>"Accomplishments have no color."</p> 
                       </quote>`;
-        htmlLink += `<\div>`;
-        /*htmlLink  += `<\a>`;*/
+        htmlLink += `</div>`;
+        htmlLink  += `</a>`;
       }
      
     }
