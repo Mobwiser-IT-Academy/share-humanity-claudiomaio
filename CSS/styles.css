@@ -336,7 +336,7 @@ button {
 /* INDEX PAGE - ENDING */
 
 
-/* ECONOMIC PAGE - BEGGIN */
+/* Content PAGEs - BEGGIN */
 
 
 .header-box-image-ECO{
@@ -348,7 +348,44 @@ button {
   background-blend-mode: saturation;
 }
 
-.header-box-ECO{
+.header-box-image-GLB{
+  background-image:url("../images/170501-airpollution-stock.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-blend-mode: saturation;
+}
+
+.header-box-image-RCM{
+  background-image:url("../images/1519793330.banner.CUL-Racial-Discrimination-776x620.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-blend-mode: saturation;
+}
+
+.header-box-image-SCH{
+  background-image:url("../images/1_YZjfn52wLI-l_ReW9928EA.jpeg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-blend-mode: saturation;
+}
+
+.header-box-image-DRG{
+  background-image:url("../images/0_rt9PCV9eBB69EsfC.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-blend-mode: saturation;
+}
+
+
+.header-box-content{
   background: #0000007e;
   opacity: 1;
   border: 0.1px solid rgba(255, 255, 255, 0);

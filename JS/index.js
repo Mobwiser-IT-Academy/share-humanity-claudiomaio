@@ -1,41 +1,31 @@
 const issues = [
     {keyword: 'economic',
-     quote: `<p>Economic Crisis </p> 
-             <p>"Today, the rich are the haves and</p> 
-             <p>the poor are the have-nots.</p> 
-             <p>Tomorrow, the rich will be the have-food</p>
-             <p>and the poor will be the have-not food."</p>`,
+     quoteTitle: `Economic Crisis`,
+     quote: `"Today, the rich are the haves and the poor are the have-nots. Tomorrow, the rich will be the have-food and the poor will be the have-not food."`,
      link: 'Economic.Crisis.html', 
      imagePath: 'images/transferir.jpg'},
       
-    {keyword: 'racism', 
-     quote: `<p> Racism </p> 
-             <p>"Accomplishments have no color."</p>`,  
+    {keyword: 'racism',
+     quoteTitle: `Racism`, 
+     quote: `"Accomplishments have no color."`,  
      link: ' ', 
      imagePath: 'images/1519793330.banner.CUL-Racial-Discrimination-776x620.jpg'},
 
     {keyword: 'global-pollution',
-     quote: `<p>Global Pollution</p> 
-             <p>"When the well is dry,</p>
-             <p>we know the worth of water."</p>`, 
+     quoteTitle: `Global Pollution`,     
+     quote: `"When the well is dry, we know the worth of water."`, 
      link: '', 
      imagePath: 'images/170501-airpollution-stock.jpg'},
       
-    {keyword: 'school-system', 
-     quote: `<p>School System</p> 
-             <p>"Everybody is a genius.</p>
-             <p>But if you judge a fish by its ability</p>
-             <p>to climb a tree, it will live its</p>
-             <p>whole life believing that it is stupid."</p>`,  
+    {keyword: 'school-system',
+     quoteTitle: `School System`, 
+     quote: `"Everybody is a genius. But if you judge a fish by its ability to climb a tree, it will live its whole life believing that it is stupid."`,  
      link: ' ', 
      imagePath: 'images/1_YZjfn52wLI-l_ReW9928EA.jpeg'},
 
-    {keyword: 'war-on-drugs', 
-     quote: `<p>War on Drugs</p> 
-             <p>"Drugs are a waste of time.</p>
-             <p>hey destroy your memory and your</p>
-             <p>self-respect and everything that</p>
-             <p>goes along with your self esteem."</p>`,  
+    {keyword: 'war-on-drugs',
+     quoteTitle: `War on Drugs`,  
+     quote: ` Drugs are a waste of time. They destroy your memory and your self-respect and everything that goes along with your self esteem."`,  
      link: ' ', 
      imagePath: 'images/0_rt9PCV9eBB69EsfC.jpg'},
     
@@ -49,7 +39,13 @@ const issues = [
       if ( i % 2 == 0){
         /*htmlLink += `<a href=${issues[i].link}>`;*/
         htmlLink += `<div class="quote-container quote-1" data-aos="fade-right">`;
-        htmlLink  += `<quote> ${issues[i].quote}</quote>`;
+
+        console.log(createQuotes(issues[i].quote));
+        let quote = '<p>' + issues[i].quoteTitle +  '</p>'; 
+        quote += createQuotes(issues[i].quote);  
+
+        htmlLink  += `<quote> ${quote}</quote>`;
+
         htmlLink += `<img class="${issues[i].keyword}" src=${issues[i].imagePath}>`;
         htmlLink += `</div>`;
         /*htmlLink += `</a>`;*/
@@ -57,7 +53,12 @@ const issues = [
                 /*htmlLink += `<a href=${issues[i].link}>`;*/
                 htmlLink += `<div class="quote-container quote-2" data-aos="fade-left">`;
                 htmlLink += `<img class="racism" src=${issues[i].imagePath}>`;
-                htmlLink += `<quote> ${issues[i].quote}</quote>`;
+
+                console.log(createQuotes(issues[i].quote));
+                let quote = '<p>' + issues[i].quoteTitle +  '</p>'; 
+                quote += createQuotes(issues[i].quote);
+
+                htmlLink += `<quote> ${quote}</quote>`;
                 htmlLink += `</div>`;
                 /*htmlLink  += `</a>`;*/
         }
@@ -67,3 +68,52 @@ const issues = [
     
 
     document.querySelector('#list-container').innerHTML = htmlLink;
+
+
+    function createQuotes(quote){
+
+        const bgnP = '<p>';
+        const endP = '</p>';
+        
+        const splits = quote.split(" ");
+        console.log(splits);
+        console.log(splits.length);
+        
+        let pgph = '';
+        let cntWords = 0; 
+    
+        
+        do{
+            if (cntWords == 0 ){
+                    pgph += bgnP
+                    cntWords += 1;
+            }
+            if (cntWords < 8){
+                    pgph += splits[0] + ' ';
+                    splits.splice(0, 1)
+                    console.log(splits);
+                    console.log(splits.length);
+                    console.log(pgph);
+                    console.log(cntWords);
+                    cntWords += 1;
+            } else if(cntWords == 8){
+                    pgph += endP;
+                    cntWords = 0
+                    }
+            if (splits.length == 0){
+                    pgph += endP;
+            }
+             
+            }while(splits.length != 0);
+      
+             
+      
+            return pgph 
+    };
+    
+    
+   /* 
+        console.log(createQuotes(issues[0].quote));
+        let quote = '<p>' + issues[i].quoteTitle +  '</p>'; 
+        quote += createQuotes(issues[0].quote); 
+        */
