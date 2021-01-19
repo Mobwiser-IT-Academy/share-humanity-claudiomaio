@@ -25,9 +25,10 @@ const issues = [
 
     {keyword: 'war-on-drugs',
      quoteTitle: `War on Drugs`,  
-     quote: ` Drugs are a waste of time. They destroy your memory and your self-respect and everything that goes along with your self esteem."`,  
+     quote: `"Drugs are a waste of time. They destroy your memory and your self-respect and everything that goes along with your self esteem."`,  
      link: ' ', 
      imagePath: 'images/0_rt9PCV9eBB69EsfC.jpg'},
+
     
     ];
     
@@ -35,10 +36,14 @@ const issues = [
     let htmlLink = '';
 
     for(let i=0; i<issues.length;i++) {
-        
+
+       const quoteClass = i % 2 === 0 ? 'quote-container quote-1' : 'quote-container quote-2';
+       const faded = i % 2 === 0 ? 'fade-right' : 'fade-left';
+
       if ( i % 2 == 0){
         /*htmlLink += `<a href=${issues[i].link}>`;*/
-        htmlLink += `<div class="quote-container quote-1" data-aos="fade-right">`;
+        
+        htmlLink += `<div class="${quoteClass}" data-aos="${faded}">`;
 
         console.log(createQuotes(issues[i].quote));
         let quote = '<p>' + issues[i].quoteTitle +  '</p>'; 
@@ -51,8 +56,8 @@ const issues = [
         /*htmlLink += `</a>`;*/
       } else {
                 /*htmlLink += `<a href=${issues[i].link}>`;*/
-                htmlLink += `<div class="quote-container quote-2" data-aos="fade-left">`;
-                htmlLink += `<img class="racism" src=${issues[i].imagePath}>`;
+                htmlLink += `<div class="${quoteClass}" data-aos="${faded}">`;
+                htmlLink += `<img class="${issues[i].keyword}" src=${issues[i].imagePath}>`;
 
                 console.log(createQuotes(issues[i].quote));
                 let quote = '<p>' + issues[i].quoteTitle +  '</p>'; 
@@ -76,8 +81,6 @@ const issues = [
         const endP = '</p>';
         
         const splits = quote.split(" ");
-        console.log(splits);
-        console.log(splits.length);
         
         let pgph = '';
         let cntWords = 0; 
@@ -91,10 +94,6 @@ const issues = [
             if (cntWords < 8){
                     pgph += splits[0] + ' ';
                     splits.splice(0, 1)
-                    console.log(splits);
-                    console.log(splits.length);
-                    console.log(pgph);
-                    console.log(cntWords);
                     cntWords += 1;
             } else if(cntWords == 8){
                     pgph += endP;
@@ -104,16 +103,10 @@ const issues = [
                     pgph += endP;
             }
              
-            }while(splits.length != 0);
+        }while(splits.length != 0);
       
              
       
             return pgph 
     };
     
-    
-   /* 
-        console.log(createQuotes(issues[0].quote));
-        let quote = '<p>' + issues[i].quoteTitle +  '</p>'; 
-        quote += createQuotes(issues[0].quote); 
-        */
