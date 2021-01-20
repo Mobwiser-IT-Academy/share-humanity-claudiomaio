@@ -28,51 +28,45 @@ const issues = [
      quote: `"Drugs are a waste of time. They destroy your memory and your self-respect and everything that goes along with your self esteem."`,  
      link: ' ', 
      imagePath: 'images/0_rt9PCV9eBB69EsfC.jpg'},
-
-    
     ];
     
     
     let htmlLink = '';
 
     for(let i=0; i<issues.length;i++) {
-
-       const quoteClass = i % 2 === 0 ? 'quote-container quote-1' : 'quote-container quote-2';
-       const faded = i % 2 === 0 ? 'fade-right' : 'fade-left';
-
-      if ( i % 2 == 0){
-        /*htmlLink += `<a href=${issues[i].link}>`;*/
-        
-        htmlLink += `<div class="${quoteClass}" data-aos="${faded}">`;
-
-        console.log(createQuotes(issues[i].quote));
-        let quote = '<p>' + issues[i].quoteTitle +  '</p>'; 
-        quote += createQuotes(issues[i].quote);  
-
-        htmlLink  += `<quote> ${quote}</quote>`;
-
-        htmlLink += `<img class="${issues[i].keyword}" src=${issues[i].imagePath}>`;
-        htmlLink += `</div>`;
-        /*htmlLink += `</a>`;*/
-      } else {
-                /*htmlLink += `<a href=${issues[i].link}>`;*/
-                htmlLink += `<div class="${quoteClass}" data-aos="${faded}">`;
-                htmlLink += `<img class="${issues[i].keyword}" src=${issues[i].imagePath}>`;
-
-                console.log(createQuotes(issues[i].quote));
-                let quote = '<p>' + issues[i].quoteTitle +  '</p>'; 
-                quote += createQuotes(issues[i].quote);
-
-                htmlLink += `<quote> ${quote}</quote>`;
-                htmlLink += `</div>`;
-                /*htmlLink  += `</a>`;*/
-        }
-     
+        createQuoteContainer(issues,i);
     }
 
-    
 
     document.querySelector('#list-container').innerHTML = htmlLink;
+
+
+    function createQuoteContainer(arry,i){
+
+        const quoteClass = i % 2 === 0 ? 'quote-container quote-1' : 'quote-container quote-2';
+        const faded = i % 2 === 0 ? 'fade-right' : 'fade-left';
+ 
+       if ( i % 2 == 0){
+         /*htmlLink += `<a href=${issues[i].link}>`;*/
+         
+         htmlLink += `<div class="${quoteClass}" data-aos="${faded}">`;
+         let quote = '<p>' + issues[i].quoteTitle +  '</p>'; 
+         quote += createQuotes(issues[i].quote);  
+         htmlLink  += `<quote> ${quote}</quote>`;
+         htmlLink += `<img class="${issues[i].keyword}" src=${issues[i].imagePath}>`;
+         htmlLink += `</div>`;
+         /*htmlLink += `</a>`;*/
+       } else {
+                 /*htmlLink += `<a href=${issues[i].link}>`;*/
+                 htmlLink += `<div class="${quoteClass}" data-aos="${faded}">`;
+                 htmlLink += `<img class="${issues[i].keyword}" src=${issues[i].imagePath}>`;
+                 let quote = '<p>' + issues[i].quoteTitle +  '</p>'; 
+                 quote += createQuotes(issues[i].quote);
+                 htmlLink += `<quote> ${quote}</quote>`;
+                 htmlLink += `</div>`;
+                 /*htmlLink  += `</a>`;*/
+         }
+    }
 
 
     function createQuotes(quote){
@@ -104,8 +98,6 @@ const issues = [
             }
              
         }while(splits.length != 0);
-      
-             
       
             return pgph 
     };
