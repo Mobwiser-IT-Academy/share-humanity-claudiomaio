@@ -30,7 +30,6 @@ const issues = [
      imagePath: 'images/0_rt9PCV9eBB69EsfC.jpg'},
     ];
     
-    
     let htmlLink = '';
 
     for(let i=0; i<issues.length;i++) {
@@ -78,8 +77,6 @@ const issues = [
         
         let pgph = '';
         let cntWords = 0; 
-    
-        
         do{
             if (cntWords == 0 ){
                     pgph += bgnP
@@ -101,4 +98,28 @@ const issues = [
       
             return pgph 
     };
+
+    const listcontainer = document.getElementById('list-container');
+    const searchBar = document.getElementById('searchBar')
+    let hpCharacters = [];
     
+    console.log(searchBar);
+    
+    searchBar.addEventListener('keyup', (e) => {
+       const searchString = e.target.value.toLowerCase(); 
+    
+        //if seachStr is H => h   
+        //if searchStr is h =>
+        //convert name to lowercase and then compare 
+        //converte house to lowercase and then compare
+    
+       const filteredCharacters = hpCharacters.filter((character) => {
+            return (
+                character.name.toLowerCase().includes(searchString) || 
+                character.house.toLowerCase().includes(searchString)
+            );
+       });
+       displayCharacters(filteredCharacters);
+    })  
+
+    console.log(searchBar);

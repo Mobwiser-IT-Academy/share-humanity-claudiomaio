@@ -81,7 +81,7 @@ form {
 }
 
 
-input[type="search"] {
+input[type="text"] {
   border: none;
   white-space: wrap;
   border-radius: 5px 5px 5px 0px;
