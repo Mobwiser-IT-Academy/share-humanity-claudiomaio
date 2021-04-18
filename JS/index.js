@@ -30,6 +30,32 @@ const issues = [
      imagePath: 'images/0_rt9PCV9eBB69EsfC.jpg'},
     ];
     
+    $('#search-input').on('keyup', function(){
+        var value = $(this).val()
+        console.log('Value:', value)
+        var data = searchTable(value, issues) 
+        for(let i=0; i<issues.length;i++) {
+            createQuoteContainer(data,i);
+        }
+    })
+
+
+    function searchTable(value, data){
+        var filteredData = []
+
+        for(var i = 0; i < data.length; i++){
+            value = value.toLowerCase()
+            var name = data[i].keyword.toLowerCase()
+
+            if (name.includes(value)){
+                filteredData.push(data[i])
+            }
+
+        }    
+
+        return filteredData 
+    }
+
     let htmlLink = '';
 
     for(let i=0; i<issues.length;i++) {
@@ -48,7 +74,7 @@ const issues = [
        if ( i % 2 == 0){
          /*htmlLink += `<a href=${issues[i].link}>`;*/
          
-         htmlLink += `<div class="${quoteClass}" data-aos="${faded}">`;
+         htmlLink += `<div class="${quoteClass} ${issues[i].keyword}" data-aos="${faded}">`;
          let quote = '<p>' + issues[i].quoteTitle +  '</p>'; 
          quote += createQuotes(issues[i].quote);  
          htmlLink  += `<quote> ${quote}</quote>`;
@@ -57,7 +83,7 @@ const issues = [
          /*htmlLink += `</a>`;*/
        } else {
                  /*htmlLink += `<a href=${issues[i].link}>`;*/
-                 htmlLink += `<div class="${quoteClass}" data-aos="${faded}">`;
+                 htmlLink += `<div class="${quoteClass} ${issues[i].keyword}" data-aos="${faded}">`;
                  htmlLink += `<img class="${issues[i].keyword}" src=${issues[i].imagePath}>`;
                  let quote = '<p>' + issues[i].quoteTitle +  '</p>'; 
                  quote += createQuotes(issues[i].quote);
@@ -98,28 +124,4 @@ const issues = [
       
             return pgph 
     };
-
-    const listcontainer = document.getElementById('list-container');
-    const searchBar = document.getElementById('searchBar')
-    let hpCharacters = [];
     
-    console.log(searchBar);
-    
-    searchBar.addEventListener('keyup', (e) => {
-       const searchString = e.target.value.toLowerCase(); 
-    
-        //if seachStr is H => h   
-        //if searchStr is h =>
-        //convert name to lowercase and then compare 
-        //converte house to lowercase and then compare
-    
-       const filteredCharacters = hpCharacters.filter((character) => {
-            return (
-                character.name.toLowerCase().includes(searchString) || 
-                character.house.toLowerCase().includes(searchString)
-            );
-       });
-       displayCharacters(filteredCharacters);
-    })  
-
-    console.log(searchBar);
