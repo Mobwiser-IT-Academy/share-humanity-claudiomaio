@@ -30,40 +30,11 @@ const issues = [
      imagePath: 'images/0_rt9PCV9eBB69EsfC.jpg'},
     ];
     
-    $('#search-input').on('keyup', function(){
-        var value = $(this).val()
-        console.log('Value:', value)
-        var data = searchTable(value, issues) 
-        for(let i=0; i<issues.length;i++) {
-            createQuoteContainer(data,i);
-        }
-    })
-
-
-    function searchTable(value, data){
-        var filteredData = []
-
-        for(var i = 0; i < data.length; i++){
-            value = value.toLowerCase()
-            var name = data[i].keyword.toLowerCase()
-
-            if (name.includes(value)){
-                filteredData.push(data[i])
-            }
-
-        }    
-
-        return filteredData 
-    }
-
     let htmlLink = '';
 
     for(let i=0; i<issues.length;i++) {
         createQuoteContainer(issues,i);
     }
-
-
-    document.querySelector('#list-container').innerHTML = htmlLink;
 
 
     function createQuoteContainer(arry,i){
@@ -72,25 +43,27 @@ const issues = [
         const faded = i % 2 === 0 ? 'fade-right' : 'fade-left';
  
        if ( i % 2 == 0){
-         /*htmlLink += `<a href=${issues[i].link}>`;*/
+         /*htmlLink += `<a href=${arry[i].link}>`;*/
          
-         htmlLink += `<div class="${quoteClass} ${issues[i].keyword}" data-aos="${faded}">`;
-         let quote = '<p>' + issues[i].quoteTitle +  '</p>'; 
-         quote += createQuotes(issues[i].quote);  
+         htmlLink += `<div class="${quoteClass} ${arry[i].keyword}" data-aos="${faded}">`;
+         let quote = '<p>' + arry[i].quoteTitle +  '</p>'; 
+         quote += createQuotes(arry[i].quote);  
          htmlLink  += `<quote> ${quote}</quote>`;
-         htmlLink += `<img class="${issues[i].keyword}" src=${issues[i].imagePath}>`;
+         htmlLink += `<img class="${arry[i].keyword}" src=${arry[i].imagePath}>`;
          htmlLink += `</div>`;
          /*htmlLink += `</a>`;*/
        } else {
-                 /*htmlLink += `<a href=${issues[i].link}>`;*/
-                 htmlLink += `<div class="${quoteClass} ${issues[i].keyword}" data-aos="${faded}">`;
-                 htmlLink += `<img class="${issues[i].keyword}" src=${issues[i].imagePath}>`;
-                 let quote = '<p>' + issues[i].quoteTitle +  '</p>'; 
-                 quote += createQuotes(issues[i].quote);
+                 /*htmlLink += `<a href=${arry[i].link}>`;*/
+                 htmlLink += `<div class="${quoteClass} ${arry[i].keyword}" data-aos="${faded}">`;
+                 htmlLink += `<img class="${arry[i].keyword}" src=${arry[i].imagePath}>`;
+                 let quote = '<p>' + arry[i].quoteTitle +  '</p>'; 
+                 quote += createQuotes(arry[i].quote);
                  htmlLink += `<quote> ${quote}</quote>`;
                  htmlLink += `</div>`;
                  /*htmlLink  += `</a>`;*/
          }
+        
+         document.querySelector('#list-container').innerHTML = htmlLink;
     }
 
 
@@ -125,3 +98,28 @@ const issues = [
             return pgph 
     };
     
+
+    $('#search-input').on('keyup', function(){
+        var value = $(this).val()
+        console.log('Value:', value)
+        var data = searchTable(value, issues)
+        htmlLink = '' 
+        for(let i=0; i<issues.length;i++) {
+            createQuoteContainer(data, i);
+        }
+    })
+
+
+    function searchTable(value, data){
+        var filteredData = []
+
+        for(var i = 0; i < data.length; i++){
+            value = value.toLowerCase()
+            var name = data[i].keyword.toLowerCase()
+
+            if (name.includes(value)){
+                filteredData.push(data[i]) 
+            }
+        }    
+        return filteredData 
+    }
